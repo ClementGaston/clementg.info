@@ -1,0 +1,87 @@
+@keyframes scrolling {
+    0% {transform: translate(0, 0);}
+    100% {transform: translate(0, 8px);}
+}
+
+#homePage {
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+
+    .description {
+        display: block;
+        text-align: center;
+    }
+
+    .profilePicture {
+        width: 100px;
+        height: 150px;
+    }
+
+    .name {
+        color: white;
+        margin: 0px 0px 8px 0px;
+        font-size: 34px;
+    }
+
+    .network {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline;
+        }
+
+        li:not(:first-child) {
+            margin-left: 35px;
+        }
+
+        img {
+            width: 46px;
+            height: 46px;
+            transition: 1s;
+        }
+
+        img:hover {
+            filter: brightness(0%);
+            transition: 0.5s;
+        }
+    }
+
+    .mouseContainer {
+        position: absolute;
+        bottom: 100px;
+        text-decoration: none;
+        color: white;
+        display: block;
+        font-size: 14px;
+        
+        .mouse {
+            height: 22px;
+            width: 14px;
+            display: block;
+            border: 1px solid white;
+            border-radius: 90px;
+            margin: 5px auto;
+        }
+
+        .wheel {
+            height: 4px;
+            width: 4px;
+            display: block;
+            background-color: white;
+            border-radius: 90px;
+            margin: 5px auto;
+            animation: 2s infinite running scrolling;
+        }
+    }
+}

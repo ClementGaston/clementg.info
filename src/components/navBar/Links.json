@@ -1,0 +1,19 @@
+[{
+    "href": "#homePage",
+    "title": "Accueil"
+}, {
+    "href": "#aboutMe",
+    "title": "A propos"
+}, {
+    "href": "#training",
+    "title": "Formation"
+}, {
+    "href": "#experience",
+    "title": "Expériences"
+}, {
+    "href": "#abilities",
+    "title": "Compétences"
+}, {
+    "href": "#contact",
+    "title": "Contact"
+}]

@@ -1,3 +1,4 @@
+@import '../../responsiveScss/media';
 @keyframes scrolling {
     0% {transform: translate(0, 0);}
     100% {transform: translate(0, 8px);}
@@ -5,7 +6,7 @@
 
 #homePage {
     overflow: hidden;
-    position: absolute;
+    height: 100vh;
     left: 0;
     right: 0;
     bottom: 0;
@@ -24,36 +25,74 @@
     .profilePicture {
         width: 100px;
         height: 150px;
+            
+        @include sm {
+            width: 50px;
+            height: 75px;
+        }
     }
 
     .name {
         color: white;
         margin: 0px 0px 8px 0px;
         font-size: 34px;
+            
+        @include sm {
+            font-size: 24px;
+        }
     }
 
-    .network {
+    ul {
         list-style: none;
         padding: 0;
         margin: 0;
 
         li {
             display: inline;
-        }
 
-        li:not(:first-child) {
-            margin-left: 35px;
+            &:not(:first-child) {
+                margin-left: 35px;
+            }
         }
 
         img {
             width: 46px;
             height: 46px;
             transition: 1s;
-        }
 
-        img:hover {
-            filter: brightness(0%);
-            transition: 0.5s;
+            &:hover {
+                filter: brightness(0%);
+                transition: 0.5s;
+            }
+            
+            @include sm {
+                width: 32px;
+                height: 32px;
+            }
+        }
+    }
+
+    button {
+        margin-top: 10px;
+        text-decoration: none;
+        color: white;
+        width: 222px;
+        height: 50px;
+        transition: 1s;
+        font-size: 24px;
+        background-color: #D7346E;
+        border-radius: 15px;
+        border: 0px;
+
+        &:hover {
+            color: black;
+            transition: 1s;
+        }
+        
+        @include sm {
+            width: 140px;
+            height: 30px;
+            font-size: 17px;
         }
     }
 
@@ -63,13 +102,16 @@
         text-decoration: none;
         color: white;
         display: block;
-        font-size: 14px;
+
+        @include sm {
+            bottom: 80px;
+        }
         
         .mouse {
             height: 22px;
             width: 14px;
             display: block;
-            border: 1px solid white;
+            border: 2px solid white;
             border-radius: 90px;
             margin: 5px auto;
         }
@@ -81,7 +123,7 @@
             background-color: white;
             border-radius: 90px;
             margin: 5px auto;
-            animation: 2s infinite running scrolling;
+            animation: 3s infinite running scrolling;
         }
     }
 }

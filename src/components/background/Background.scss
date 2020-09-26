@@ -1,0 +1,105 @@
+@import '../../responsiveScss/media';
+@keyframes move_wave {
+    0% {
+        transform: translateX(0) translateZ(0) scaleY(1)
+    }
+    50% {
+        transform: translateX(-25%) translateZ(0) scaleY(0.55)
+    }
+    100% {
+        transform: translateX(-50%) translateZ(0) scaleY(1)
+    }
+}
+
+@mixin wave($url, $height, $duration) {
+    background-image: url($url);
+    background-size: 50% $height;
+    animation: move_wave $duration linear infinite;
+}
+
+.waveWrapper {
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    z-index: -1;
+
+     > div {
+        position: absolute;
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top, #86377b 20%, #27273c 80%);
+
+        &.bgTop {
+            z-index: -1;
+            opacity: 0.5;
+
+            > div {
+                @include wave("../../images/wave-top.png", 100px, 10s);
+
+                @include lg {
+                    @include wave("../../images/wave-top.png", 100px, 10s);
+                }
+
+                @include sm {
+                    @include wave("../../images/wave-top.png", 80px, 10s);
+                }
+            }
+        }
+
+        &.bgMiddle {
+            z-index: -2;
+            opacity: 0.75;
+
+            > div {
+                @include wave("../../images/wave-mid.png", 110px, 15s);
+
+                @include lg {
+                    @include wave("../../images/wave-mid.png", 110px, 15s);
+                }
+
+                @include sm {
+                    @include wave("../../images/wave-mid.png", 90px, 15s);
+                }
+            }
+        }
+
+        &.bgBottom {
+            z-index: -3;
+            
+            > div {
+                @include wave("../../images/wave-bot.png", 100px, 20s);
+                
+                @include lg {
+                    @include wave("../../images/wave-bot.png", 100px, 20s);
+                }
+
+                @include sm {
+                    @include wave("../../images/wave-bot.png", 80px, 20s);
+                }
+            }
+        }
+
+        > div {
+            position: absolute;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat no-repeat;
+            background-position: 0 bottom;
+            transform-origin: center bottom;
+
+            @include lg {
+                width: 400%;
+            }
+
+            @include sm {
+                width: 600%;
+            }
+        }
+    }
+}

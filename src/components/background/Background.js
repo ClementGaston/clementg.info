@@ -1,19 +1,19 @@
 import React from 'react';
-import './Background.css'
+import './Background.scss'
 
 function Background() {
   return (
-    <div className="waveWrapper waveAnimation">
-      <div className="waveWrapperInner bgTop">
-        <div className="wave waveTop"></div>
+    <div className="waveWrapper">
+      <div className="bgTop">
+        <div className="waveTop" />
       </div>
 
-      <div className="waveWrapperInner bgMiddle">
-        <div className="wave waveMiddle"></div>
+      <div className="bgMiddle">
+        <div className="waveMiddle" />
       </div>
 
-      <div className="waveWrapperInner bgBottom">
-        <div className="wave waveBottom"></div>
+      <div className="bgBottom">
+        <div className="waveBottom" />
       </div>
     </div>
   );

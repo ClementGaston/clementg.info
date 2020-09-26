@@ -1,0 +1,138 @@
+@import '../../responsiveScss/media';
+
+$lgColor: white;
+
+@mixin toggle {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: $lgColor;
+}
+
+@mixin fixedNavbar {
+    background-color: #86377b;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+    transition: 1s;
+}
+
+#navBar {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    min-height: 30px;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    
+    h2 {
+        display: none;
+
+        @include lg{
+            display: block;
+            position: absolute;
+            color: $lgColor;
+            margin: 0;
+        } 
+
+        @include sm {
+            font-size: 18px;
+            padding-top: 3px;
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: center;
+
+        li a {
+            text-decoration: none;
+
+            &:hover {
+                color: rgb(158, 158, 158);
+            }
+        }
+    }
+
+    .toggle {
+        display: none;
+
+        &:after {
+            @include toggle();
+            bottom: 4px;
+        }
+
+        &:before {
+            @include toggle();
+            top: 4px;
+            box-shadow: 0 10px 0 $lgColor;
+        }
+
+        @include lg {
+            display: block;
+            position: absolute;
+            right: 30px;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+    }
+}
+
+.absolute {
+    padding: 20px 0;
+    transition: 1s;
+
+    ul {
+        display: flex;
+        justify-content: center;
+        
+        li {
+            &:not(:first-child) {
+                margin-left: 50px;
+            }
+
+            a {
+                color: $lgColor;
+                transition: 0.5s;
+                font-size: 24px;
+            }
+        }
+
+        @include lg {
+            display: none;
+        }
+    }
+}
+
+.sticky {
+    @include fixedNavbar();
+    @extend .absolute;
+}
+
+.develop {
+    @include fixedNavbar();
+    border-bottom: 1px solid black;
+
+    ul {
+        position: absolute;
+        display: block;
+        top: 51px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        overflow: auto;
+        background: white;
+
+        li a {
+            color: black;
+            display: inline-block;
+            margin: 10px 0;
+            font-size: 20px;
+        }
+    }
+}

@@ -1,0 +1,234 @@
+@import '../../responsiveScss/media';
+
+$web:
+    #F4511E 0.9,
+    #4973DF 0.8,
+    #F1EB5C 0.7,
+    #339337 0.6,
+    #4BC2F4 0.9;
+
+$imperative:
+    #44A1F8 0.8,
+    #FD0909 0.75,
+    #DC2DCA 0.85;
+
+$gestion:
+    #222120 0.9,
+    #FAB329 0.95;
+
+article {
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    display: grid;
+    grid-column-gap: 4%;
+    
+    h3 { 
+        font-size: 24px;
+        margin: 15px 0 0 0;
+
+        @include xxl {
+            font-size: 18px;     
+        }
+
+        @include sm {
+            font-size: 18px;
+        }
+    }
+
+    .card {
+        position: relative;
+        height: 100%;
+        
+        svg {
+            width: 100px;
+            height: 100px;
+
+            @include xxl {
+                width: 70px;
+                height: 70px;        
+            }
+
+            @include sm {
+                width: 50px;
+                height: 50px;
+            }
+
+            circle {
+                width: 100%;
+                height: 100%;
+                fill: none;
+                stroke: #191919;
+                stroke-width: 7;
+                stroke-linecap: round;
+                transform: translate(5px, 5px);
+                cx: 45;
+                cy: 45;
+                r: 45;
+
+                @include xxl {
+                    stroke-width: 4;
+                    cx: 30;
+                    cy: 30;
+                    r: 30;
+                }
+
+                @include sm {
+                    stroke-width: 2;
+                    cx: 20;
+                    cy: 20;
+                    r: 20;
+                }
+            }
+        }
+
+        p {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 26px;
+            padding: 6px 2px;
+            font-weight: 400;
+            transition: 0.5s;
+            color: black;
+            
+            @include xxl {
+                font-size: 18px;
+                padding: 4px 2px;
+            }
+
+            @include sm {
+                font-size: 14px;
+                padding: 2px;
+                font-weight: 300;
+            }
+
+            span {
+                font-size: 24px;
+                color: black;
+                transition: 0.5s;
+
+                @include xxl {
+                    font-size: 16px;
+                }
+
+                @include sm {
+                    font-size: 12px;
+                }
+            }
+        }
+
+        h4 {
+            margin: 10px 0 0 0;
+            font-size: 28px;
+            font-weight: 600;
+            color: black;
+
+
+            @include xxl {
+                margin: 5px 0 0 0;
+                font-size: 20px;
+            }
+
+            @include sm {
+                margin: 0;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@mixin gridArea($size) {
+    grid-row-start: 1;
+    grid-column-start: 1;
+    grid-row-end: 2;
+    grid-column-end: $size;
+}
+
+@mixin responsiveAbilities($array) {
+    $length: length($array);
+
+    grid-template-columns: repeat($length);
+    grid-template-rows: 0.5fr 1.9fr;
+    grid-row-gap: 30px;
+    padding: 0 5% 30px 5%;
+
+    @if $length <= 3 {
+        width: 35%;
+    } @else {
+        width: 90%;
+    }
+
+    @include xl {
+        width: 90%;
+    }
+
+    @include lg {
+        grid-row-gap: 20px;
+        padding: 0 5% 20px 5%;
+
+        @if $length > 3 {
+            grid-template-rows: 0.5fr 1.9fr 1.9fr;
+        }
+    }
+
+    @include sm {
+        grid-template-rows: 0.5fr 1.6fr;
+        grid-row-gap: 10px;
+
+        @if $length > 3 {
+            grid-template-rows: 0.5fr 1.6fr 1.6fr;
+        }
+    }
+
+    h3 {
+        @include gridArea($length + 1);
+
+        @include lg {
+            @if $length >= 3 {
+                @include gridArea(4);
+            }
+        }
+    }
+
+    @each $color, $percent in $array {
+        $index: index($array, ($color $percent)) + 1;
+
+        .card:nth-child(#{$index}) svg circle {
+            stroke-dasharray: 285;
+            stroke-dashoffset: calc(285 - (285 * #{$percent}));
+
+            @include xxl {
+                stroke-dasharray: 195;
+                stroke-dashoffset: calc(195 - (195 * #{$percent}));
+            }
+
+            @include sm {
+                stroke-dasharray: 125;
+                stroke-dashoffset: calc(125 - (125 * #{$percent}));
+            }
+
+            stroke: #{$color}
+        }
+    }
+}
+
+#WEB {
+    @include responsiveAbilities($web);
+}
+
+#IMPERATIVE {
+    @include responsiveAbilities($imperative);
+}
+
+#GESTION {
+    @include responsiveAbilities($gestion);
+}
+
+// XL => Flex box

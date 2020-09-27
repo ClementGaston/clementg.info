@@ -1,0 +1,13 @@
+@import './responsiveScss/media';
+
+main {
+  margin: 0 15%;
+
+  @include lg {
+    margin: 0 10%;
+  }
+
+  @include md {
+    margin: 0 5%;
+  }
+}

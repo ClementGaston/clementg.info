@@ -1,13 +1,23 @@
 import React from 'react';
-import HomePage from './components/homepage/HomePage';
-import './App.css';
 import NavBar from './components/navBar/NavBar';
+import HomePage from './components/homepage/HomePage';
+import './App.scss';
+import Abilities from './components/abilities/Abilities';
+import Footer from './components/footer/Footer';
 
 function App() {
   return (
     <>
-      <NavBar />
-      <HomePage />
+      <header>
+        <NavBar />
+        <HomePage />
+      </header>
+
+      <main>
+        <Abilities />
+      </main>
+
+      <Footer />
     </>
   );
 }

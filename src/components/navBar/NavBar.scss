@@ -28,6 +28,9 @@ $lgColor: white;
     
     h2 {
         display: none;
+        font-family: "Fira sans";
+        font-style: italic;
+        font-weight: 100;
 
         @include lg{
             display: block;

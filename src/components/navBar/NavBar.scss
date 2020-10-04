@@ -53,9 +53,15 @@ $lgColor: white;
 
         li a {
             text-decoration: none;
+            outline: none;
 
             &:hover {
                 color: rgb(158, 158, 158);
+            }
+
+            &:focus {
+                color: rgb(158, 158, 158);
+                text-decoration: underline;
             }
         }
     }

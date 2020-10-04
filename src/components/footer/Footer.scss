@@ -25,9 +25,11 @@ footer {
         a {
             text-decoration: none;
             color: white;
+            outline: none;
 
-            &:hover {
+            &:hover, &:focus {
                 color: gray;
+                text-decoration: underline;
             }
         }
     }

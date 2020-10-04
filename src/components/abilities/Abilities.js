@@ -5,8 +5,10 @@ import './Abilities.scss'
 function Abilities() {
   return (
       <Section id={"abilities"} title={"Compétences"}>
+          <div className="abilitiesContainer">
           <article id="WEB">
               <h3>WEB</h3>
+                <div className="cardContainer">
               <div className="card">
                   <svg children={<circle />} />
                   <p>90<span>%</span></p>
@@ -32,10 +34,12 @@ function Abilities() {
                   <p>90<span>%</span></p>
                   <h4>ReactJS</h4>
               </div>
+              </div>
           </article>
 
             <article id="IMPERATIVE">
                 <h3>IMPERATIVE</h3>
+                <div className="cardContainer">
                 <div className="card">
                     <svg children={<circle />} />
                     <p>80<span>%</span></p>
@@ -51,10 +55,12 @@ function Abilities() {
                     <p>85<span>%</span></p>
                     <h4>C#</h4>
                 </div>
+              </div>
             </article>
 
           <article id="GESTION">
               <h3>GESTION</h3>
+                <div className="cardContainer">
               <div className="card">
                   <svg children={<circle />} />
                   <p>90<span>%</span></p>
@@ -65,7 +71,9 @@ function Abilities() {
                   <p>95<span>%</span></p>
                   <h4>SQL</h4>
               </div>
+              </div>
           </article>
+          </div>
       </Section>
   );
 }

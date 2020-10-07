@@ -1,25 +1,25 @@
 @import '../../responsiveScss/media';
 
 footer {
-    height: 80px;
+    height: 30px;
     padding: 10px 0;
     width: 100%;
     display: block;
     background-color: #27273c;
     
     @include md {
-        height: 60px;
+        height: 20px;
     }
 
     p {
         color: white;
         text-align: center;
         margin: 0;
-        padding-top: 12px;
+        padding-top: 2px;
 
         @include md {
             font-size: 12px;
-            padding-top: 8px;
+            margin-top: -1px;
         }
 
         a {

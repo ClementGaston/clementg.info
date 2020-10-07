@@ -3,6 +3,15 @@
 .section {
     margin-bottom: 20px;
 
+    &::before { 
+        display: block; 
+        content: " "; 
+        margin-top: -35px; 
+        height: 35px; 
+        visibility: hidden; 
+        pointer-events: none;
+    }
+
     > h2 {
         font-size: 38px;
         color: #59305D;

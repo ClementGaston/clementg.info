@@ -5,11 +5,11 @@
     "href": "#aboutMe",
     "title": "A propos"
 }, {
+    "href": "#experiences",
+    "title": "Expériences"
+}, {
     "href": "#training",
     "title": "Formation"
-}, {
-    "href": "#experience",
-    "title": "Expériences"
 }, {
     "href": "#abilities",
     "title": "Compétences"

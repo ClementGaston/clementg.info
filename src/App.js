@@ -6,6 +6,7 @@ import Abilities from './components/abilities/Abilities';
 import Footer from './components/footer/Footer';
 import Contact from './components/contact/Contact';
 import Training from './components/training/Training';
+import About from './components/about/About';
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
       </header>
 
       <main>
+        <About />
         <Training />
         <Abilities />
         <Contact />

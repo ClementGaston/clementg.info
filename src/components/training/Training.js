@@ -8,11 +8,11 @@ import TrainingList from './Training.json'
 function Training() {
   return (
     <div className="flexContainer">
-      <Section id="training" title="Formation">
-        <TrainingBoxes content={TrainingList}/>
-      </Section>
       <Section id="experiences" title="Expériences">
         <TrainingBoxes content={ExperiencesList}/>
+      </Section>
+      <Section id="training" title="Formation">
+        <TrainingBoxes content={TrainingList}/>
       </Section>
     </div>
   );

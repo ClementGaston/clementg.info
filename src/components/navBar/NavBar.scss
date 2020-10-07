@@ -54,7 +54,8 @@ $lgColor: white;
         li a {
             text-decoration: none;
             outline: none;
-
+            offset: 20px;
+            
             &:hover {
                 color: rgb(158, 158, 158);
             }

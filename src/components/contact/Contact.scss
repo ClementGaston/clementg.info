@@ -13,7 +13,6 @@
     }
 }
 
-
 #contact form {
     input {
         @include formCss(5px);
@@ -45,9 +44,8 @@
 
     button {
         @include formCss(30px);
-        width: 50%;
+        width: 100%;
         height: 40px;
-        transform: translateX(50%);
         background-color: #D7346E;
         color: white;
 

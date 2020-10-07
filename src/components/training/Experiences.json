@@ -1,0 +1,15 @@
+[
+    {
+        "date": "Depuis Octobre 2020", 
+        "title": "Freelance Développeur WEB", 
+        "description": "Démarchage de client, définitions de leurs besoins, création de sites internet et mise en production."
+    }, {
+        "date": "Août 2020", 
+        "title": "CDD Développeur WEB", 
+        "description": "Finalisation de l'interface WEB de mon précédent stage et mise en place de test unitaires (Travis-CI, React Testing Library, Jest...)."
+    }, {
+        "date": "Avril 2020 - Juillet 2020", 
+        "title": "Stage Développeur WEB", 
+        "description": "Mise en place d une interface WEB sous ReactJS permettant la configuration des produits de l entreprise. Elle récupère ses données depuis une BDD sous MySQL, passant par une API NodeJS à l aide de requêtes HTTP."
+    }
+]

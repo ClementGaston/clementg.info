@@ -5,6 +5,7 @@ import './App.scss';
 import Abilities from './components/abilities/Abilities';
 import Footer from './components/footer/Footer';
 import Contact from './components/contact/Contact';
+import Training from './components/training/Training';
 
 function App() {
   
@@ -16,6 +17,7 @@ function App() {
       </header>
 
       <main>
+        <Training />
         <Abilities />
         <Contact />
       </main>

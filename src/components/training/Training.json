@@ -1,0 +1,15 @@
+[
+    {
+        "date": "Depuis Septembre 2020", 
+        "title": "Ecole d’ingénieur CESI", 
+        "description": "Actuellement en première année du cycle ingénieur en spécialité Informatique (BAC+3)."
+    }, {
+        "date": "2018 - 2020", 
+        "title": "Prépa informatique CESI", 
+        "description": "Classe préparatoire de 2ans en spécialité Informatique, voyant les bases de plusieurs langages (C, SQL, Java, etc...)."
+    }, {
+        "date": "2015-2018", 
+        "title": "Lycée Pierre-Paul Riquet", 
+        "description": "BAC S-SVT spécialité Math obtenu avec mention Assez Bien."
+    }
+]

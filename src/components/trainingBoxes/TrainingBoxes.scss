@@ -1,0 +1,77 @@
+.boxes {
+    width: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    padding: 5px 0 15px 0;
+
+    .container {
+        display: grid;
+        grid-template-columns: 0.3fr 1fr;
+        grid-template-rows: 2fr;
+        grid-row-gap: 0px;
+
+        .icon {
+            position: relative;
+            grid-area: 1 / 1 / 2 / 2;
+
+            .trainingIcon {
+                display: block;
+                margin-top: 15px;
+                width: 60px;
+                margin-left: auto;
+                margin-right: auto;
+                z-index: 2;
+            }
+
+            .timeLine{
+                position: absolute;
+                display: block;
+                width: 0;
+                top: 67px;
+                height: auto;
+                bottom: 13px;
+                border: 2px solid #FF4C60;
+                background-color: #FF4C60;
+                margin-left: 50%;
+                margin-right: 50%;
+            }
+        }
+
+        .training {
+            grid-area: 1 / 2 / 2 / 3;
+            padding-right: 15px;
+
+            .date {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 18px;
+                color: #434343;
+                margin-bottom: 0px;
+                margin-top: 15px;
+            }
+
+            .title {
+                font-style: normal;
+                font-weight: bold;
+                font-size: 22px;
+                line-height: 37px;
+                color: #59305D;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+
+            .description {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 28px;
+                text-align: justify;
+                color: #59305D;
+                margin-top: 0px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

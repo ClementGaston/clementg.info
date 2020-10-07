@@ -1,0 +1,15 @@
+@import '../../responsiveScss/media';
+
+.flexContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    section {
+        flex: 0 1 45%;
+
+        @include xl {
+            flex: 0 1 100%;
+        }
+    }
+}
